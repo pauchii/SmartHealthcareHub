@@ -1,0 +1,8 @@
+@import "bootstrap";
+
+body
+{
+  background-image: url('/assets/bg.jpg');
+  font-family: verdana;
+  font-size: 14px;
+}

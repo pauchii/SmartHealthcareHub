@@ -1,0 +1,61 @@
+<div class="container form-group-lg ">
+
+    <%= form_with(model: patient, local: true) do |form| %>
+      <% if patient.errors.any? %>
+        <div id="error_explanation">
+          <<h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+          <ul>
+          <% patient.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= form.label :forename %>
+        <%= form.text_field :forename, id: :patient_forename, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :surname %>
+        <%= form.text_field :surname, id: :patient_surname, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :date_of_birth %>
+        <%= form.date_select :date_of_birth,  { :include_blank => true, :start_year => 1900 } , id: :patient_date_of_birth, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :address %>
+        <%= form.text_field :address, id: :patient_address, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :phone_number %>
+        <%= form.text_field :phone_number, id: :patient_phone_number, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :infection_or_injury %>
+        <%= form.text_field :infection_or_injury, id: :patient_infection_or_injury, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :symptoms %>
+        <%= form.text_area :symptoms, id: :patient_symptoms, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :other_observations %>
+        <%= form.text_area :other_observations, id: :patient_other_observations, class: "form-control" %>
+      </div>
+
+      <div class="actions" align="center">
+        <%= form.submit "Add Patient", class: "btn btn-primary btn-lg" %>
+      </div>
+    <% end %>
+
+</div>

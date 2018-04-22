@@ -1,0 +1,48 @@
+<div class="container ">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Forename:</strong>
+  <%= @patient.forename %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @patient.surname %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @patient.date_of_birth %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @patient.address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @patient.phone_number %>
+</p>
+
+<p>
+  <strong>Infection or injury:</strong>
+  <%= @patient.infection_or_injury %>
+</p>
+
+<p>
+  <strong>Symptoms:</strong>
+  <%= @patient.symptoms %>
+</p>
+
+<p>
+  <strong>Other observations:</strong>
+  <%= @patient.other_observations %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
+
+</div>

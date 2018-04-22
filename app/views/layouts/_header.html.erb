@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navabr-header">
+        <%= link_to "Smart Healthcare Hub", root_path, class: "navbar-brand" %>
+      </div>
+
+      <!-- links -->
+      <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+            <li> <%= link_to "New Patient", new_patient_path, class: "active" %> </li>
+            <li> <%= link_to "My Account", edit_user_registration_path %> </li>
+            <li> <%= link_to "Log Out", destroy_user_session_path, method: :delete %> </li>
+          <% else %>
+            <li> <%= link_to "Register", new_user_registration_path, class: "active" %> </li>
+            <li> <%= link_to "Log In", new_user_session_path, class: "active" %> </li>
+          <% end %>
+        </ul>
+        <!-- search textfield -->
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <%= form_tag patients_path, :method => 'get' do %>
+              <%= text_field_tag :search, params[:search], class: "form-control" %>
+              <%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
+            <% end %>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+</body>
+
+</html>
