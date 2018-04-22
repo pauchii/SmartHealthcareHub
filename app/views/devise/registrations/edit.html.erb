@@ -13,7 +13,9 @@
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
+      <% end %><br/>
+
+      <h3>Change Password</h3>
 
       <div class="form-group">
         <%= f.label :password %> <i>(leave blank to leave password unchanged) // </i>
@@ -26,7 +28,9 @@
       <div class="form-group">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-      </div>
+      </div><br />
+
+      <h3>Save Changes</h3>
 
       <div class="form-group">
         <%= f.label :current_password %> <i>(needed to confirm your changes)</i><br />
