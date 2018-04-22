@@ -54,7 +54,8 @@
       </div>
 
       <div class="actions" align="center">
-        <%= form.submit "Add Patient", class: "btn btn-primary btn-lg" %>
+        <%= form.submit "Save", class: "btn btn-primary btn-lg" %>
+        <%= link_to "Back", patients_path, class: "btn btn-primary btn-lg" %>
       </div>
     <% end %>
 

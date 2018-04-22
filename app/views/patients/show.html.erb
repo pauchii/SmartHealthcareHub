@@ -1,48 +1,46 @@
-<div class="container ">
+<div class="container" id="showPatient">
+    <p>
+      <strong>Forename:</strong>
+      <%= @patient.forename %>
+    </p>
 
-<p id="notice"><%= notice %></p>
+    <p>
+      <strong>Surname:</strong>
+      <%= @patient.surname %>
+    </p>
 
-<p>
-  <strong>Forename:</strong>
-  <%= @patient.forename %>
-</p>
+    <p>
+      <strong>Date of birth:</strong>
+      <%= @patient.date_of_birth %>
+    </p>
 
-<p>
-  <strong>Surname:</strong>
-  <%= @patient.surname %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @patient.address %>
+    </p>
 
-<p>
-  <strong>Date of birth:</strong>
-  <%= @patient.date_of_birth %>
-</p>
+    <p>
+      <strong>Phone number:</strong>
+      <%= @patient.phone_number %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @patient.address %>
-</p>
+    <p>
+      <strong>Infection or injury:</strong>
+      <%= @patient.infection_or_injury %>
+    </p>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @patient.phone_number %>
-</p>
+    <p>
+      <strong>Symptoms:</strong>
+      <%= @patient.symptoms %>
+    </p>
 
-<p>
-  <strong>Infection or injury:</strong>
-  <%= @patient.infection_or_injury %>
-</p>
-
-<p>
-  <strong>Symptoms:</strong>
-  <%= @patient.symptoms %>
-</p>
-
-<p>
-  <strong>Other observations:</strong>
-  <%= @patient.other_observations %>
-</p>
-
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
-
+    <p>
+      <strong>Other observations:</strong>
+      <%= @patient.other_observations %>
+    </p>
 </div>
+<br/>
+<div class="actions" align="center">
+  <%= link_to "Edit", edit_patient_path(@patient), class: "btn btn-primary btn-lg" %>
+  <%= link_to "Back", patients_path, class: "btn btn-primary btn-lg" %>
+</div><br/>
